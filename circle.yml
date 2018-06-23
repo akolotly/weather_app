@@ -1,0 +1,13 @@
+machine: 
+  ruby: 
+    version: 2.5.0
+
+test:
+  override:
+    - bundle exec rubocop
+    - bundle exec rspec --require spec_helper spec --format progress
+ 
+dependencies:
+  post:
+    - bundle exec bundle-audit update && bundle exec bundle-audit check
+    - bundle exec brakeman --exit-on-warn
