@@ -1,7 +1,8 @@
-class CityController < ApplicationController
+class CitiesController < ApplicationController
   before_action :find_city, only: :show
 
   def index
+    # добавить пагинацию страниц
     @cities = City.all
   end
 

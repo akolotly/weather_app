@@ -1,0 +1,17 @@
+header.container.p-2.border-bottom
+  .d-flex
+    .mr-auto.p-2
+      | Weather app 
+    span.p-2
+      = link_to 'Список всех городов', cities_path
+    /- if current_user      
+      span.p-2
+        = link_to 'Добавить админа', new_user_path
+        = link_to 'Мой профайл', user_path(current_user.id)
+        = link_to 'Редактировать профайл', edit_user_path(current_user.id)
+        = link_to 'Удалить профайл', current_user, method: :delete, data: { confirm: 'Вы уверены?' }
+        = link_to 'Выход', :logout, method: :post
+    /- else
+      span.p-2
+        = link_to 'Вход', :login
+
