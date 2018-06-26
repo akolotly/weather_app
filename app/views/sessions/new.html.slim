@@ -3,7 +3,6 @@
 .main.container.p-3
 
   h1.text-center.margin-bottom-30 Вход на сайт
-  = render 'shared/error_messages', object: @user
 
   = form_tag(sessions_path, method: 'post') do 
     .form-group.row.margin-bottom-30
