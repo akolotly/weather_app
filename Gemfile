@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'slim'
 gem 'rubocop', '~> 0.54.0', require: false
-
+gem 'sorcery'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
