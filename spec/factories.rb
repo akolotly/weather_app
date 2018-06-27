@@ -4,7 +4,6 @@ FactoryBot.define do
     password '123456'
   end
 
-
   factory :city do
     name 'Москва'
     latitude 55.753215

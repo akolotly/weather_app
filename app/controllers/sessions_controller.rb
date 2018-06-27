@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -20,4 +19,3 @@ class SessionsController < ApplicationController
     # redirect_to root_url
   end
 end
-
