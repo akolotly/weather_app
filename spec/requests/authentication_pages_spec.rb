@@ -1,27 +1,26 @@
 require 'rails_helper'
 
 describe 'Authentication' do
-
   subject { page }
 
-  describe "Login page" do
+  describe 'Login page' do
     before { visit login_path }
 
     it { is_expected.to have_content('Вход') }
     it { is_expected.to have_title('Вход') }
   end
-  
-  describe "Login" do
+
+  describe 'Login' do
     before { visit login_path }
 
-    context "With invalid information" do
-      before { click_button "Войти" }
+    context 'With invalid information' do
+      before { click_button 'Войти' }
 
       it { is_expected.to have_title('Вход') }
       it { is_expected.not_to have_title('Выход') }
     end
-    
-    context "With valid information" do
+
+    context 'With valid information' do
       let(:user) { FactoryBot.create(:user, password: '123456') }
       before { sign_in user }
       
@@ -60,7 +59,7 @@ end
 
 def sign_in(user)
   visit login_path
-  fill_in "Логин",    with: user.email
-  fill_in "Пароль", with: '123456'
-  click_button "Войти"
+  fill_in 'Логин', with: user.email
+  fill_in 'Пароль', with: '123456'
+  click_button 'Войти'
 end

@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
     if current_user.present?
       redirect_to admin_dashboard_path

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe User, type: :model do
   subject { FactoryBot.create(:user) }
-  
+
   describe 'Validation' do
     context 'When all attributes is present' do
       it { is_expected.to be_valid }
@@ -20,8 +20,8 @@ describe User, type: :model do
       end
     end
 
-    context "When email format is invalid" do
-      it "should be invalid" do
+    context 'When email format is invalid' do
+      it 'should be invalid' do
         addresses = %w[user@foo,com user_at_foo.org example.user@foo.
                        foo@bar_baz.com foo@bar+baz.com foo@bar..com]
         addresses.each do |invalid_address|
@@ -31,8 +31,8 @@ describe User, type: :model do
       end
     end
 
-    context "When email format is valid" do
-      it "should be valid" do
+    context 'When email format is valid' do
+      it 'should be valid' do
         addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
         addresses.each do |valid_address|
           subject.email = valid_address
@@ -41,7 +41,7 @@ describe User, type: :model do
       end
     end
 
-    context "When email address is already taken" do
+    context 'When email address is already taken' do
       before do
         @user_with_same_email = subject.dup
       end
@@ -55,4 +55,3 @@ describe User, type: :model do
     end
   end
 end
-
