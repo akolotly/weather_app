@@ -23,7 +23,7 @@ describe 'Authentication' do
     context 'With valid information' do
       let(:user) { FactoryBot.create(:user, password: '123456') }
       before { sign_in user }
-      
+
       it { is_expected.to have_title('Dashboard') }
       it { is_expected.to have_link('Users', href: admin_users_path) }
       it { is_expected.to have_link('Cities', href: admin_cities_path) }
@@ -31,23 +31,22 @@ describe 'Authentication' do
       it { is_expected.not_to have_link('Вход', href: login_path) }
     end
   end
-  
-  describe "Authorization" do
 
-    describe "For non-signed-in users" do
+  describe 'Authorization' do
+    describe 'For non-signed-in users' do
       let(:user) { FactoryBot.create(:user) }
 
-      context "When attempting to visit a protected page" do
+      context 'When attempting to visit a protected page' do
         before { visit admin_users_path }
-        
+
         it { expect(page).to have_title('Cities') }
         it { expect(page).to have_selector('h1', text: 'Города') }
       end
 
-      context "When visit login page" do
-        before do 
+      context 'When visit login page' do
+        before do
           visit login_path
-          sign_in user 
+          sign_in user
           visit login_path
         end
 
