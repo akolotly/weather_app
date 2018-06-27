@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'rubocop', '~> 0.54.0', require: false
 gem 'sorcery'
+gem 'activeadmin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,11 +52,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'brakeman', require: false
-  gem 'bundler-audit', require: false
-  gem 'pry'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

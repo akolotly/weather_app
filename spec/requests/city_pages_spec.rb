@@ -11,6 +11,7 @@ describe 'City pages' do
 
       it { is_expected.to have_title(city.name) }
       it { is_expected.to have_selector('h1', city.name) }
+      it { is_expected.not_to have_title('Выход') }
     end
   end
 
