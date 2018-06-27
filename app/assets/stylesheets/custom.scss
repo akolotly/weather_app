@@ -1,4 +1,5 @@
 $link_color: #00CED1;
+$header_background-color: #575c60;
 
 html {
   height: 100%;
@@ -32,6 +33,6 @@ a {
   margin-bottom:30px;
 }
 
-// .item {
-//  cursor: pointer;
-// }
+header {
+  background-color: $header_background-color;
+}
