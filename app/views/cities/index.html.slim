@@ -1,0 +1,13 @@
+- provide(:title, 'Cities')
+.main.container.p-3
+
+  h1.text-center.margin-bottom-30 Города
+  ul.list-group
+    - @cities.each do |city|
+      li.list-group-item.list-group-item-action
+        .d-flex
+          .mr-auto.p-2
+            = link_to city.name, city
+          .p-2
+            = link_to 'Узнать погоду', city
+

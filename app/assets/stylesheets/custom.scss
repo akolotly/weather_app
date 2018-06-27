@@ -1,0 +1,38 @@
+$link_color: #00CED1;
+$header_background-color: #575c60;
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+
+.main-background {
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+a {
+  color: $link_color;
+
+  &:hover {
+    color: $link_color * 0.7;
+  }
+}
+
+.margin-bottom-30 {
+  margin-bottom:30px;
+}
+
+header {
+  background-color: $header_background-color;
+}

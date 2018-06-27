@@ -1,0 +1,20 @@
+- provide(:title, 'Вход')
+
+.main.container.p-3
+
+  h1.text-center.margin-bottom-30 Вход на сайт
+
+  = form_tag(sessions_path, method: 'post') do 
+    .form-group.row.margin-bottom-30
+      .col-2
+        = label_tag(:email, 'Логин', class: 'col-form-label')
+      .col-10
+        = text_field_tag(:email, '', class: 'form-control')
+    .form-group.row.margin-bottom-30
+      .col-2
+        = label_tag(:password, 'Пароль', class: 'col-form-label')
+      .col-10
+        = password_field_tag(:password, '', class: 'form-control')
+    .form-group.row
+      .col-2
+        = submit_tag('Войти', class: 'btn btn-primary btn-outline-secondary')

@@ -1,0 +1,13 @@
+header.p-2.border-bottom
+  .d-flex
+    .mr-auto.p-2
+      = link_to 'Weather app', cities_path, class: 'text-white'
+    span.p-2
+      = link_to 'Список всех городов', cities_path, class: 'text-white'
+    - if current_user      
+      span.p-2
+        = link_to 'Выход', :logout, method: :post, class: 'text-white'
+    - else
+      span.p-2
+        = link_to 'Вход', :login, class: 'text-white'
+
