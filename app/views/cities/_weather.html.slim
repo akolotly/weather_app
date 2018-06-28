@@ -8,7 +8,7 @@ table.table
       th scope="col" Атмосферное давление
       th scope="col" Влажность,%
   tbody
-    - @response.dig('list').each do |weather_for_3_hours|
+    - @forecast.each do |weather_for_3_hours|
       tr
         th scope="row" = weather_for_3_hours.dig('dt_txt')
         td = weather_for_3_hours.dig('main', 'temp')
