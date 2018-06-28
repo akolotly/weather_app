@@ -1,3 +1,5 @@
+require Rails.root.join('app', 'services', 'get_weather')
+
 class CitiesController < ApplicationController
   before_action :find_city, only: :show
 
@@ -6,7 +8,11 @@ class CitiesController < ApplicationController
     @cities = City.all
   end
 
-  def show; end
+  def show
+    @response = GetWeather.new(@city).call
+  rescue Net::OpenTimeout
+    @response = nil 
+  end
 
   private
 

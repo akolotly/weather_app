@@ -1,0 +1,18 @@
+table.table
+  thead
+    tr
+      th scope="col" Дата/Время
+      th scope="col" Температура
+      th scope="col" Облачность
+      th scope="col" Скорость ветра
+      th scope="col" Атмосферное давление
+      th scope="col" Влажность,%
+  tbody
+    - @response.dig('list').each do |weather_for_3_hours|
+      tr
+        th scope="row" = weather_for_3_hours.dig('dt_txt')
+        td = weather_for_3_hours.dig('main', 'temp')
+        td = weather_for_3_hours.dig('weather', 0, 'description')
+        td = weather_for_3_hours.dig('wind', 'speed')
+        td = weather_for_3_hours.dig('main', 'pressure')
+        td = weather_for_3_hours.dig('main', 'humidity')
