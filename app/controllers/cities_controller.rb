@@ -9,7 +9,9 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @response = GetWeather.new(@city).call
+    @response = Rails.cache.fetch("#{@city.id}/#{@city.updated_at}/current_weather", expires_in: 1.hours) do
+      GetWeather.new(@city).call
+    end
   rescue Net::OpenTimeout
     @response = nil 
   end
@@ -18,6 +20,6 @@ class CitiesController < ApplicationController
 
   def find_city
     @city = City.find_by(id: params[:id])
-    redirect_to city_url if @city.nil?
+    redirect_to cities_path if @city.nil?
   end
 end

@@ -12,13 +12,4 @@ class GetWeather
   def call
     OpenWeather::Forecast.geocode(@lat, @lon, OPTIONS)
   end
-
 end
-
-
-# list.main.temp Температура.
-# list.main.pressure Атмосферное давление
-# list.main.humidity Влажность,%
-# list.wind.speed  Скорость ветра.
-# list.weather.description  =>"облачно"
-# list.dt_txt:"2018-06-28 09:00:00" дата
