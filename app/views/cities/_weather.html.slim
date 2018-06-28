@@ -2,11 +2,11 @@ table.table
   thead
     tr
       th scope="col" Дата/Время
-      th scope="col" Температура
+      th scope="col" Температура, градусы Цельсия
       th scope="col" Облачность
-      th scope="col" Скорость ветра
-      th scope="col" Атмосферное давление
-      th scope="col" Влажность,%
+      th scope="col" Скорость ветра, м/с
+      th scope="col" Атмосферное давление, мм рт.ст.
+      th scope="col" Влажность, %
   tbody
     - @forecast.each do |weather_for_3_hours|
       tr

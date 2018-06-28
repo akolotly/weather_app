@@ -3,5 +3,5 @@ class City < ActiveRecord::Base
 
   validates :name, :latitude, :longitude, :time_zone, presence: true
   validates :time_zone, inclusion: { in: TIME_ZONES,
-    message: "%{value} не существует. Выберите из списка" }
+                                         message: '%{value} не существует. Выберите из списка' }
 end
