@@ -1,3 +1,5 @@
+require Rails.root.join('app', 'services', 'get_weather')
+
 class CitiesController < ApplicationController
   before_action :find_city, only: :show
 
@@ -6,12 +8,18 @@ class CitiesController < ApplicationController
     @cities = City.all
   end
 
-  def show; end
+  def show
+    @forecast = Rails.cache.fetch("#{@city.id}/#{@city.updated_at}/current_weather", expires_in: 1.hours) do
+      GetWeather.new(@city).call
+    end
+  rescue Net::OpenTimeout
+    @forecast = nil
+  end
 
   private
 
   def find_city
     @city = City.find_by(id: params[:id])
-    redirect_to city_url if @city.nil?
+    redirect_to cities_path if @city.nil?
   end
 end

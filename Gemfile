@@ -29,6 +29,7 @@ gem 'slim'
 gem 'rubocop', '~> 0.54.0', require: false
 gem 'sorcery'
 gem 'activeadmin'
+gem 'open-weather'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

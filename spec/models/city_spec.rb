@@ -9,6 +9,7 @@ describe City, type: :model do
 
       it 'response to methods' do
         is_expected.to respond_to(:name)
+        is_expected.to respond_to(:time_zone)
         is_expected.to respond_to(:latitude)
         is_expected.to respond_to(:longitude)
       end
@@ -31,6 +32,13 @@ describe City, type: :model do
     context 'When longitude is empty' do
       it 'not be valid' do
         subject.longitude = ' '
+        is_expected.not_to be_valid
+      end
+    end
+
+    context 'When time zone is empty' do
+      it 'not be valid' do
+        subject.time_zone = ' '
         is_expected.not_to be_valid
       end
     end

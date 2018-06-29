@@ -8,5 +8,6 @@ FactoryBot.define do
     name 'Москва'
     latitude 55.753215
     longitude 37.622504
+    time_zone 'Moscow'
   end
 end

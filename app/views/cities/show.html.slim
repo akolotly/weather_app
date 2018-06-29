@@ -3,4 +3,8 @@
   
   h1.text-center.margin-bottom-30
     = @city.name
-
+  - if @forecast.nil?
+    div.text-center 
+      | Сервер погоды временно недоступен
+  - else
+    = render 'weather'
