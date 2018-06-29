@@ -10,7 +10,7 @@ table.table
   tbody
     - @forecast.each do |weather_for_3_hours|
       tr
-        th scope="row" = weather_for_3_hours.dig('dt_txt')
+        td.font-weight-bold = weather_for_3_hours.dig('dt_txt')
         td = weather_for_3_hours.dig('main', 'temp')
         td = weather_for_3_hours.dig('weather', 0, 'description')
         td = weather_for_3_hours.dig('wind', 'speed')

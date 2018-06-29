@@ -1,3 +1,5 @@
+require 'open_weather'
+
 RESPONSE_FORECAST_MOCK = {
   'cod' => '200',
   'message' => 0.002,

@@ -5,8 +5,8 @@ describe 'City pages' do
   let(:forecast_response) { RESPONSE_FORECAST_MOCK }
 
   before do
-    allow_any_instance_of(GetWeather)
-      .to receive(:call)
+    allow(OpenWeather::Forecast)
+      .to receive(:geocode)
       .and_return(forecast_response)
   end
 
