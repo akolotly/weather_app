@@ -11,3 +11,9 @@ dependencies:
   post:
     - bundle exec bundle-audit update && bundle exec bundle-audit check
     - bundle exec brakeman --exit-on-warn
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: shielded-coast-16096
